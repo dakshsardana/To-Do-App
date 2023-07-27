@@ -11,13 +11,13 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
-  // useEffect(() => {
-  //   if (tasks.length === 0) {
-  //     localStorage.removeItem('tasks');
-  //   } else {
-  //     localStorage.setItem('tasks', JSON.stringify(tasks));
-  //   }
-  // }, [tasks]);  
+  useEffect(() => {
+    if (tasks.length === 0) {
+      localStorage.removeItem('tasks');
+    } else {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }, [tasks]);  
 
   useEffect(() => {
     const tasks = JSON.parse(localStorage.getItem('tasks'));
